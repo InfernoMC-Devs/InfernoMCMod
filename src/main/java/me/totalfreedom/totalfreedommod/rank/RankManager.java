@@ -50,10 +50,15 @@ public class RankManager extends FreedomService
         }
 
         // Developers always show up
-        if (FUtil.DEVELOPERS.contains(player.getName()))
+        if (FUtil.TFDEVS.contains(player.getName()))
         {
-            return Title.DEVELOPER;
+            return Title.TFDEV;
         }
+        if (FUtil.IMCDEVS.contains(player.getName()))
+        {
+            return Title.IMCDEV;
+        }
+        
 
         final Rank rank = getRank(player);
 
@@ -67,6 +72,10 @@ public class RankManager extends FreedomService
         if (ConfigEntry.SERVER_OWNERS.getList().contains(player.getName()))
         {
             return Title.OWNER;
+        }
+        if (ConfigEntry.SERVER_EXECUTIVES.getList().contains(player.getName())) {
+            
+            return Title.EXECUTIVE;
         }
 
         return rank;
@@ -158,7 +167,7 @@ public class RankManager extends FreedomService
         }
 
         // Set display
-        if (isAdmin || FUtil.DEVELOPERS.contains(player.getName()))
+        if (isAdmin || FUtil.TFDEVS.contains(player.getName()) && FUtil.IMCDEVS.contains(player.getName()))
         {
             final Displayable display = getDisplay(player);
             String loginMsg = display.getColoredLoginMessage();

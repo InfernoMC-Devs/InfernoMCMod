@@ -55,7 +55,8 @@ public class Module_players extends HTTPDModule
         }
 
         // Developers
-        developers.addAll(FUtil.DEVELOPERS);
+        developers.addAll(FUtil.TFDEVS);
+        developers.addAll(FUtil.IMCDEVS);
 
         responseObject.put("players", players);
         responseObject.put("superadmins", superadmins);

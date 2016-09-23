@@ -21,6 +21,10 @@ server:
   owners:
     - taahanis
     - heroguy42
+  # All players who show up as executive
+  executives:
+    - insertd00d
+
 
   # URL players should appeal for bans at
   ban_url: http://infernomc.boards.net/

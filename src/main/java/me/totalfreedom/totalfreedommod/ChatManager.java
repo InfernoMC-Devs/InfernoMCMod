@@ -102,6 +102,7 @@ public class ChatManager extends FreedomService
 
     public void adminChat(CommandSender sender, String message)
     {
+        message = ChatColor.translateAlternateColorCodes('&', message);
         String name = sender.getName() + " " + plugin.rm.getDisplay(sender).getColoredTag() + ChatColor.WHITE;
         FLog.info("[ADMIN] " + name + ": " + message);
 

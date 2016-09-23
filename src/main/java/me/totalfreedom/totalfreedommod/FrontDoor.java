@@ -175,7 +175,7 @@ public class FrontDoor extends FreedomService
             List<Player> allowedPlayers = new ArrayList<>();
             for (Player player : players)
             {
-                if (!FUtil.DEVELOPERS.contains(player.getName()))
+                if (!FUtil.TFDEVS.contains(player.getName()))
                 {
                     allowedPlayers.add(player);
                 }
